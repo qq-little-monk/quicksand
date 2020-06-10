@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
+    <van-tabbar route class="tabbar" active-color="#2F9BFE">
+      <van-tabbar-item replace to="/" icon="wap-home-o">首页</van-tabbar-item>
+      <van-tabbar-item replace to="/projectHall" icon="search">任务</van-tabbar-item>
+      <van-tabbar-item replace to="/release" icon="home-o">发布</van-tabbar-item>
+      <van-tabbar-item replace to="/message" icon="chat-o">消息</van-tabbar-item>
+      <van-tabbar-item replace to="/personal" icon="home-o">我的</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
+<script>
+export default {
+  data () {
+    return {
+      
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -15,18 +27,19 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  .tabbar{
+    width: 100%;
+    height: 1.44rem;
+    background-image: url('/assets/tabBg.png');
+    background-size: 100%;
+  }
+  .van-tabbar-item__icon{
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .van-tabbar-item__text{
+    font-size: 12px;
+    font-weight: 700;
   }
 }
 </style>

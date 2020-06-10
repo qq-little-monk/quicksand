@@ -2,9 +2,30 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import axios from 'axios'
 
-Vue.config.productionTip = false
+//vant
+import { 
+  Tabbar,
+  TabbarItem,
+  Swipe, 
+  SwipeItem,
+  Search,
+  Grid, 
+  GridItem, 
+} from 'vant';
 
+Vue.use(Swipe );
+Vue.use(SwipeItem);
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
+Vue.use(Search);
+Vue.use(Grid);
+Vue.use(GridItem);
+
+
+Vue.config.productionTip = false;
+Vue.prototype.$axios = axios;
 new Vue({
   router,
   store,

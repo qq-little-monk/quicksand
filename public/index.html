@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+        (function setRem() {  
+          let docEl = document.documentElement;  //考虑以及兼容了 屏幕旋转的事件
+          let resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';  
+          let recalc = function () { 
+            var clientWidth = docEl.clientWidth;          
+            if (!clientWidth) return;           
+            if (clientWidth >= 750) {
+                  docEl.style.fontSize = '100px';
+            } else {
+                  docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };   if (!document.addEventListener) return;
+            window.addEventListener(resizeEvt, recalc, false);     // 屏幕大小以及旋转变化自适应
+            document.addEventListener('DOMContentLoaded', recalc, false);     // 页面初次打开自适应
+            recalc();
+          })();
+    </script>
   </head>
   <body>
     <noscript>
