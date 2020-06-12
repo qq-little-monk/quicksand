@@ -17,12 +17,18 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Index',
-    component: Index
+    component: Index,
+    meta:{
+      showTab:true
+    }
   },
   {
     path: '/message',
     name: 'Message',
-    component: Message
+    component: Message,
+    meta:{
+      showTab:true
+    }
   },
   {
     path: '/caseHall',
@@ -42,12 +48,15 @@ Vue.use(VueRouter)
   {
     path: '/release',
     name: 'Release',
-    component: Release
+    component: Release,
+    meta:{
+      showTab:true
+    }
   },
   {
     path: '/personal',
     name: 'Personal',
-    component: Personal
+    component: Personal,
   },
   {
     path: '/projectHall',

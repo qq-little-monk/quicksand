@@ -12,7 +12,8 @@ import {
   SwipeItem,
   Search,
   Grid, 
-  GridItem, 
+  GridItem,
+  Field, 
 } from 'vant';
 
 Vue.use(Swipe );
@@ -22,7 +23,7 @@ Vue.use(TabbarItem);
 Vue.use(Search);
 Vue.use(Grid);
 Vue.use(GridItem);
-
+Vue.use(Field);
 
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;

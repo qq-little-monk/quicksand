@@ -1,17 +1,22 @@
 <template>
   <div id="app">
     <router-view/>
-    <van-tabbar route class="tabbar" active-color="#2F9BFE">
+    <!-- <van-tabbar route class="tabbar" active-color="#2F9BFE">
       <van-tabbar-item replace to="/" icon="wap-home-o">首页</van-tabbar-item>
       <van-tabbar-item replace to="/projectHall" icon="search">任务</van-tabbar-item>
       <van-tabbar-item replace to="/release" icon="home-o">发布</van-tabbar-item>
       <van-tabbar-item replace to="/message" icon="chat-o">消息</van-tabbar-item>
       <van-tabbar-item replace to="/personal" icon="home-o">我的</van-tabbar-item>
-    </van-tabbar>
+    </van-tabbar> --> 	
+  <Tabbar tabbar v-if="$route.meta.showTab" />
   </div>
 </template>
 <script>
+import Tabbar from '../src/components/Tabbar';
 export default {
+  components:{
+    Tabbar
+  },
   data () {
     return {
       
